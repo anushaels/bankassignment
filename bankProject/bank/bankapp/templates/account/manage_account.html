@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Manage Account{% endblock %}
+
+{% block content %}
+    <h2>Your Account</h2>
+    {% if account %}
+        <p>Account Number: {{ account.account_number }}</p>
+        <p>Account Type: {{ account.get_account_type_display }}</p>
+        <p>Balance: ${{ account.balance }}</p>
+        <a href="{% url 'transaction' %}">Make a Transaction</a>
+        <a href="{% url 'transaction_history' %}">View Transaction History</a>
+    {% else %}
+        <h2>Create Bank Account</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create Account</button>
+        </form>
+    {% endif %}
+{% endblock %}

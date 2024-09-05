@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Make a Transaction{% endblock %}
+
+{% block content %}
+    <h2>Make a Transaction</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <p>Balance: ${{ account.balance }}</p>
+    <a href="{% url 'transaction_history' %}">View Transaction History</a>
+{% endblock %}

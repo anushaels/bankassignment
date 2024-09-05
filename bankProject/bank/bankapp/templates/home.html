@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Bank Application</h1>
+    <p>We offer a range of banking services to suit your needs.</p>
+    <p><a href="{% url 'login' %}">Login</a></p>
+    <p><a href="{% url 'register' %}">Register</a></p>
+{% endblock %}

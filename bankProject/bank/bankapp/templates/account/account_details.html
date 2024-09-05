@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Bank Account Details{% endblock %}
+
+{% block content %}
+    <h2>Your Bank Account</h2>
+    <p>Account Number: {{ account.account_number }}</p>
+    <p>Account Type: {{ account.get_account_type_display }}</p>
+    <p>Balance: ${{ account.balance }}</p>
+    <p>Date Created: {{ account.date_created }}</p>
+{% endblock %}
